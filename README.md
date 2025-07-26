@@ -28,8 +28,8 @@ A simple and effective Visual Studio Code extension to check and update outdated
 
 ## 📸 Screenshots
 
-> _Coming soon_ – show UI in action: sidebar panel, update buttons, changelog links, etc.
-
+![ScreenShot](demo.png "demo vsc")
+> Options for refresh,update all,help,single update and more
 ---
 
 ## 🚀 Getting Started
