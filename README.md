@@ -36,7 +36,7 @@ A simple and effective Visual Studio Code extension to check and update outdated
 
 ### 1. Install the extension
 
-Download from the [Visual Studio Marketplace](#) or clone this repo and run it in the **Extension Host (F5)** in VS Code.
+Download from the VS Code Marketplace from link provided or using `ext install JayantNavrange.nodejs-package-updater`
 
 ### 2. Open a Node.js project
 
