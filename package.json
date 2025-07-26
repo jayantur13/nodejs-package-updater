@@ -3,7 +3,7 @@
   "displayName": "Nodejs Dependency Update",
   "description": "A VS Code extension to manage outdated Node.js dependencies in your projects.",
   "publisher": "JayantNavrange",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "icon": "assets/main.png",
   "engines": {
