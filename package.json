@@ -1,0 +1,150 @@
+{
+  "name": "nodejs-package-updater",
+  "displayName": "Nodejs Dependency Update",
+  "description": "A VS Code extension to manage outdated Node.js dependencies in your projects.",
+  "publisher": "JayantNavrange",
+  "version": "1.0.0",
+  "license": "MIT",
+  "icon": "assets/main.png",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "author": {
+    "name": "Jayant Navrange",
+    "email": "jayantur13@gmail.com",
+    "url": "https://www.linkedin.com/in/jayant-navrange-238aa5138/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jayantur13/nodejs-package-updater.git"
+  },
+  "homepage": "https://github.com/jayantur13/nodejs-package-updater#readme",
+  "bugs": {
+    "url": "https://github.com/jayantur13/nodejs-package-updater/issues"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/jayantur13"
+  },
+  "keywords": [
+    "vscode extension",
+    "extension",
+    "module updater",
+    "package updater",
+    "library updater",
+    "nodejs package updater",
+    "update nodejs package",
+    "update package.json"
+  ],
+  "preview": false,
+  "galleryBanner": {
+    "color": "#41205f",
+    "theme": "dark"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "nodejs-updater",
+          "title": "Node.js Updater",
+          "icon": "assets/mono.svg"
+        }
+      ]
+    },
+    "views": {
+      "nodejs-updater": [
+        {
+          "id": "outdatedDependencies",
+          "name": "Outdated Dependencies",
+          "icon": "assets/mono.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "nodejs-updater.refreshDependencies",
+        "title": "Refresh Dependencies",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "nodejs-updater.updateDependency",
+        "title": "Update Dependency",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "nodejs-updater.ignoreDependency",
+        "title": "Ignore Dependency",
+        "icon": "$(eye-closed)"
+      },
+      {
+        "command": "nodejs-updater.updateAllDependencies",
+        "title": "Update All",
+        "icon": "$(arrow-up)"
+      },
+      {
+        "command": "nodejs-updater.openChangelog",
+        "title": "Changelog",
+        "icon": "$(compare-changes)"
+      },
+      {
+        "command": "nodejs-updater.showHelp",
+        "title": "Help",
+        "icon": "$(info)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "nodejs-updater.showHelp",
+          "when": "view == outdatedDependencies",
+          "group": "navigation"
+        },
+        {
+          "command": "nodejs-updater.refreshDependencies",
+          "when": "view == outdatedDependencies",
+          "group": "navigation"
+        },
+        {
+          "command": "nodejs-updater.updateAllDependencies",
+          "when": "view == outdatedDependencies",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "nodejs-updater.openChangelog",
+          "when": "view == outdatedDependencies && viewItem == outdatedDependency",
+          "group": "inline"
+        },
+        {
+          "command": "nodejs-updater.updateDependency",
+          "when": "view == outdatedDependencies && viewItem == outdatedDependency",
+          "group": "inline"
+        },
+        {
+          "command": "nodejs-updater.ignoreDependency",
+          "when": "view == outdatedDependencies && viewItem == outdatedDependency",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.1.0",
+    "@types/vscode": "^1.75.1",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.31.0",
+    "glob": "^11.0.3",
+    "mocha": "^11.7.1",
+    "typescript": "^5.8.3"
+  }
+}
